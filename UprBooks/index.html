@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="utf-8"/>
+	<title> Home </title>
+	<link rel="stylesheet" href="format.css" />
+</head>
+
+<body>
+
+	<div class="container">
+	
+	<header>
+		<a href="index.html"><img src="logo.png" alt="logo area" 
+		width="100" height="75" class="logo"/> </a>
+		<nav>
+			<a href="#" id="menu-icon"> </a><!--item para utilizar la pagina en dispositivos moviles-->
+			<ul><!--Menu de la pagina-->
+				<li><a href="index.html" style="color: red;"> Home </a></li>
+				<li><a href="booking.html"> Booking </a></li>
+				<li class="dropdown"><a href="#" class="dropdown-btn"> Shop </a>
+					<div class="dropdown-menu">
+					<a href="Shop/accesories.html"> Accesories </a>
+					<a href="Shop/clothing.html"> Clothing </a>
+					<a href="Shop/music.html"> Music </a>
+					<a href="Shop/posters.html"> Posters </a>
+				</div>
+				</li>
+			</ul>
+		</nav>
+		
+		<!-- This line makes the next line clear of content-->
+		<div class="clear"> </div>
+	</header>
+		
+	<!-- main info -->
+	
+	<div class="bckColor">
+		
+<div class="home">
+<br>
+<h1>UPRBooks</h1><br>
+<h3>Bienvenido al sistema de intercambio y venta de libros de la Universidad de Puerto Rico en Ponce</h3><h4>Para utilizar este sistema debe estar registrado en la pagina con su informacion institucional</h4><br><br><br><br>
+<form id="signup" action="//submit.form" id="SignUp100" method="post" onsubmit="return ValidateForm(this);">
+<h1>Sign Up</h1><script type="text/javascript">
+function ValidateForm(frm) {
+if (frm.FirstName.value == "") { alert('First Name is required.'); frm.FirstName.focus(); return false; }
+if (frm.LastName.value == "") { alert('Last Name is required.'); frm.LastName.focus(); return false; }
+if (frm.FromEmailAddress.value == "") { alert('Email address is required.'); frm.FromEmailAddress.focus(); return false; }
+if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.FromEmailAddress.focus(); return false; }
+return true; }
+</script>
+<table >
+<tr> <td>
+<label for="FirstName">Nombre</label>, <label for="LastName">Apellidos:</label>
+</td> <td>
+<input name="FirstName" type="text" maxlength="60" style="width: 146px;" />
+<input name="LastName" type="text" maxlength="60" style="width: 146px;" />
+</td> </tr> <tr> <td>
+<label for="#Student">Numero De Estudiante:</label>
+</td> <td>
+<input name="#Student" type="text" maxlength="60" style="width: 300px;" />
+</td> </tr> <tr> <td>
+<label for="FromEmailAddress">Correo Electronico Institucional:</label>
+</td> <td>
+<input name="FromEmailAddress" type="text" maxlength="60" style="width: 300px;" />
+</td> </tr> <tr> <td>
+<label for="Contraseña">Contraseña:</label>
+</td> <td>
+<input name="Contraseña" type="text" maxlength="60" style="width: 300px;" />
+</td> </tr><tr> <td>
+<label for="Contraseña">Confirmar Contraseña:</label>
+</td> <td>
+<input name="Contraseña" type="*" maxlength="60" style="width: 300px;" />
+</td> </tr> <tr> <td>
+<label for="CellPhone">Numero telefonico:</label>
+</td> <td>
+<input name="CellPhone" type="text" maxlength="43" style="width: 250px;" />
+</td> </tr> 
+
+</table><input name="skip_Submit" type="submit" value="Sign Up" />
+</form><br><br>
+<form id="signin" action="//submit.form" id="SignUp100" method="post" onsubmit="return ValidateForm(this);">
+<h1> Sign In</h1><script type="text/javascript">
+function ValidateForm(frm) {
+if (frm.FirstName.value == "") { alert('First Name is required.'); frm.FirstName.focus(); return false; }
+if (frm.LastName.value == "") { alert('Last Name is required.'); frm.LastName.focus(); return false; }
+if (frm.FromEmailAddress.value == "") { alert('Email address is required.'); frm.FromEmailAddress.focus(); return false; }
+if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.FromEmailAddress.focus(); return false; }
+return true; }
+</script>
+<table >
+ <tr> <td>
+<label for="FromEmailAddress">Correo Electronico Institucional:</label>
+</td> <td>
+<input name="FromEmailAddress" type="text" maxlength="60" style="width: 300px;" />
+</td> </tr>
+<tr> <td>
+<label for="Contraseña">Contraseña:</label>
+</td> <td>
+<input name="Contraseña" type="text" maxlength="60" style="width: 300px;" />
+</td> </tr>
+</table><input name="skip_Submit" type="submit" value="Sign In" />
+</form>
+</div>
+</div>
+<br>
+<br>
+<br><!--Pie de Pagina-->
+	<footer class="page_footer"> 
+		&copy; Copyright Reserve.
+	</footer>
+	</div> 
+	</div>
+</body>
+
+</html>
