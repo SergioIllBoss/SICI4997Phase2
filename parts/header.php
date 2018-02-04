@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Inicio </title>
+    <title> UPRBOOKS </title>
 	<link rel="stylesheet" href="format.css" />
 	<link rel="icon" href="book.ico" type="image/x-icon"><!--Icono de pagina de titulo-->
 </head>
