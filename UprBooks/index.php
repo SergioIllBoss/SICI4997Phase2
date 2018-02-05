@@ -29,16 +29,17 @@ if (isset($_SESSION['userID'])) {
 }
 include './parts/header.php';
 if ($action == 'login') {
-    include './parts/signin.php';
+    include './parts/login.php';
 } else if ($action == 'logout') {
     session_destroy();
     header('Location: index.php');
 } else if ($action == 'doLogin') {
+   
     $u = User::loadFromUsername($_POST['username']);
     
     if (is_null($u)) {
         showError('The user doesn\'t exist.');
-        include './parts/signin.php';
+        include './parts/login.php';
     } else if ($u->validatePassword($_POST['password'])) {
         $_SESSION['userID'] = $u->id;
         $_SESSION['loginTime'] = time();
@@ -46,30 +47,10 @@ if ($action == 'login') {
         header('Location: index.php');
     } else {
         showError('The entered password is incorrect!');
-        include './parts/signin.php';
-    }
-} else if ($action == 'register') {
-    include './parts/signup.php';
-} else if ($action == 'doRegister') {
-    $u = User::loadFromUsername($_POST['username']);
-    
-    if ($u) {
-        showError('The username already exist.');
-        include './parts/signup.php';
-    } else {
-        $u = new User();
-        
-        $u->username = $_POST['username'];
-        $u->password = $_POST['password1'];
-        $u->email = $_POST['email'];
-        $u->save();
-        
-        showSuccess('You Have Been Successfully registered!');
-    }
+        include './parts/login.php';
 } else {
     include './parts/body.php';
 }
- 
 include './parts/footer.php';
 echo '<pre>' . print_r($_SESSION, true)  . '</pre>';
 if (isset($_SESSION['loginTime'])) {
@@ -78,8 +59,4 @@ if (isset($_SESSION['loginTime'])) {
 function showError($msg) {
     echo '<div class="alert alert-danger" role="alert">' . $msg . '</div>';
 }
-function showSuccess($msg) {
-    echo '<div class="alert alert-success" role="alert">' . $msg . '</div>';
-}
-
 ?>
