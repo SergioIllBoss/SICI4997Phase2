@@ -7,11 +7,14 @@
 	}
 	
 main{
-	background-color: black;
+	background-color: white;
 }
 
 body {
 	font-family: arial, sans-serif;
+	background-color: #990000;
+	margin-left:70px;
+	margin-right:70px;
 
 }
 /* Alinea al header 2 centralizado*/
@@ -127,7 +130,20 @@ li.dropdown {
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
 }
-
+table {
+    width: 100%; 
+    background-color: white;
+}
+table#t01 tr:nth-child(even) {
+    background-color: white;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: white;
+}
+table#t01 th {
+    color: white;
+    background-color: white;
+}
 .dropdown-menu a{
 	color: white;
 	padding: 12px 16px;
@@ -167,9 +183,6 @@ li.dropdown {
 	text-align:center;
 }
 /*Alinea elementos en paginas*/
-.Contact{text-align:center;}
-.ListenUs{text-align:center;}
-.ListenUs h3{text-align:center;}
 
 .social {
 /* Fija la posición en pantalla para que siempre se muestren los botones */
@@ -206,7 +219,9 @@ p {
 }
 	
 @media only screen and (max-width: 750px) {
-	#wrapper { width: auto; }
+	
+		ul{text-align:center;}
+#wrapper { width: auto; }
 	#logo {display: none;}
 	#seal {display: none;}
 	#galeria {width: initial; margin: initial;}
@@ -214,36 +229,44 @@ p {
 	h2 { font-size: 120%; }
 	p { font-size: 90%; }
 	ul { list-style-type: none;}
-	li a { display: block; padding: 8px 300px 8px 16px;}
+	li a { display: block; padding: 8px 300px 8px 16px;text-align:center;}
 }
 
 @media only screen and (max-width: 600px) {
-	#wrapper { width: auto; }
+	
+		ul{text-align:center;}
+#wrapper { width: auto; }
 	#logo {display: none;}
 	#seal {display: none;}
 	h1 { font-size: 175%; }
 	h2 { font-size: 120%; }
 	p { font-size: 90%; }
 	ul { list-style-type: none;}
-	li a { display: block; padding: 8px 200px 8px 16px;}
+	li a { display: block; padding: 8px 200px 8px 16px;text-align:center;}
 }
 
 @media only screen and (max-width: 500px) {
-	#wrapper { width: auto; }
+	
+		ul{text-align:center;}
+#wrapper { width: auto; }
 	#logo {display: none;}
 	#seal {display: none;}
 	h1 { font-size: 150%; margin-top: 0; margin-bottom:4px;}
 	h2 { font-size: 100%; }
 	p { font-size: 90%; margin-left:5%; margin-right: 5% }
-	li a { display: block; padding: 8px 100px 8px 16px;}
+	li a { display: block; padding: 8px 100px 8px 16px;text-align:center;}
 }
 
 @media only screen and (max-width: 400px) {
+	ul{text-align:center;}
 	#wrapper { width: auto; }
 	#logo {display: none;}
 	#seal {display: none;}
 	h1 { font-size: 150%; margin-top: 0; margin-bottom:4px;}
 	h2 { font-size: 100%; }
 	p { font-size: 90%; margin-left:5%; margin-right: 5% }
-	li a { display: block; padding: 8px 50px 8px 16px;}
+	li a { display: block; padding: 8px 50px 8px 16px;text-align:center;}
+}
+.user{
+	float :left;
 }

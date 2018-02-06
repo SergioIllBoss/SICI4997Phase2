@@ -18,14 +18,31 @@
 				<li><a href="index.php"> Inicio </a></li>
 				<li><a href= "booking.php"> Libros </a></li>
 				<li><a href="perfil.php"> Perfil  </a>
-				</li>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  
-				<li> <a class="" href="index.php?a=register">Register</a></li>
+          	</li>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+				&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+				&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+				&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+				<?php
+if (!isset($loggedUser)) {
+?>
+					<li> <a class="" href="index.php?a=register">Register</a></li>
           
         <li>  <a class="" href="index.php?a=login">Login</a>
 			</li></ul>
+<?php
+} else {
+  
+  echo '<span style="color: white; font-weight: bold;">Hi ' . $loggedUser->nombre . '</span>&nbsp;&nbsp;&nbsp;';
+?>
+          <a class="btn btn-outline-danger my-2 my-sm-0" href="index.php?a=logout">Logout</a>
+<?php
+}
+?>
 			     
 		</nav>
 		<!-- This line makes the next line clear of content-->
 		<div class="clear"> </div>
     </main>
+	</header>
 	</header>

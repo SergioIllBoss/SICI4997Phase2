@@ -34,12 +34,12 @@ if ($action == 'login') {
     session_destroy();
     header('Location: index.php');
 } else if ($action == 'doLogin') {
-    $u = User::loadFromUsername($_POST['username']);
+    $u = User::loadFromNumest($_POST['numest']);
     
     if (is_null($u)) {
         showError('The user doesn\'t exist.');
         include './parts/signin.php';
-    } else if ($u->validatePassword($_POST['password'])) {
+    } else if ($u->validatePassword($_POST['Contraseña'])) {
         $_SESSION['userID'] = $u->id;
         $_SESSION['loginTime'] = time();
         $_SESSION['loginIP'] = $_SERVER['REMOTE_ADDR'];
@@ -51,17 +51,20 @@ if ($action == 'login') {
 } else if ($action == 'register') {
     include './parts/signup.php';
 } else if ($action == 'doRegister') {
-    $u = User::loadFromUsername($_POST['username']);
+    $u = User::loadFromNumest($_POST['numest']);
     
     if ($u) {
-        showError('The username already exist.');
+        showError('Numero de estudiante ya existe.');
         include './parts/signup.php';
     } else {
         $u = new User();
         
-        $u->username = $_POST['username'];
-        $u->password = $_POST['password1'];
+        $u->nombre = $_POST['nombre'];
+        $u->apellidos = $_POST['apellidos'];
+        $u->numest = $_POST['numest'];
+        $u->tel = $_POST['tel'];
         $u->email = $_POST['email'];
+        $u->Contraseña = $_POST['Contraseña'];
         $u->save();
         
         showSuccess('You Have Been Successfully registered!');
@@ -71,10 +74,10 @@ if ($action == 'login') {
 }
  
 include './parts/footer.php';
-echo '<pre>' . print_r($_SESSION, true)  . '</pre>';
+/*echo '<pre>' . print_r($_SESSION, true)  . '</pre>';
 if (isset($_SESSION['loginTime'])) {
     echo '<pre>' . date('d-M-Y H:m:s', $_SESSION['loginTime']) . '</pre>';
-}
+}*/
 function showError($msg) {
     echo '<div class="alert alert-danger" role="alert">' . $msg . '</div>';
 }
