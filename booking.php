@@ -105,24 +105,26 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM `Libros`";
+$sql = "SELECT * FROM `book`";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo '<table style="color: black";<tr>
 	<th style="color: white; background-color: #990000;">Titulo</th>
+	<th style="color: white; background-color: #990000;">Autor</th>
+	<th style="color: white; background-color: #990000;">Departamento/es</th>
 	<th style="color: white; background-color: #990000;">ISBN</th>
-	<th style="color: white; background-color: #990000;">Autor/es</th>
-	<th style="color: white; background-color: #990000;">Categoria</th>
-	<th style="color: white; background-color: #990000";>Asignatura</th></tr>';
+	<th style="color: white; background-color: #990000";>Estado</th>
+	<th style="color: white; background-color: #990000";>Precio</th></tr>';
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo '<tr>
-		<td style="background-color: white;">' . $row["Titulo"]. '</td>
+		<td style="background-color: white;">' . $row["titulo"]. '</td>
+		<td style="background-color: white;">' . $row["autor"]. '</td>
+		<td style="background-color: white;">' . $row["dept"]. '</td>
 		<td style="background-color: white;">' . $row["ISBN"]. '</td>
-		<td style="background-color: white;">' . $row["Autor/es"]. '</td>
-		<td style="background-color: white;">' . $row["Categoria"]. '</td>
-		<td style="background-color: white;">' . $row["Asignatura"]. '</td></tr>';
+		<td style="background-color: white;">' . $row["estado"]. '</td>
+		<td style="background-color: white;">' . $row["precio"]. '</td></tr>';
     }
     echo "</table>";
 } else {
