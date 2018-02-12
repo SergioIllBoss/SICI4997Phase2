@@ -28,6 +28,7 @@ if (isset($_SESSION['userID'])) {
     }
 }
 include './parts/header.php';
+
 if ($action == 'login') {
     include './parts/signin.php';
 } else if ($action == 'logout') {
@@ -65,19 +66,46 @@ if ($action == 'login') {
         $u->tel = $_POST['tel'];
         $u->email = $_POST['email'];
         $u->Contraseña = $_POST['Contraseña'];
-        $u->save();
-        
-        showSuccess('You Have Been Successfully registered!');
+        $u->save(); ?><div class="center"><main><br><br><?php
+         showSuccess('You Have Been Successfully registered!');
     }
-} else {
-    include './parts/body.php';
+}
+
+else if ($action == 'perfil') {
+    include './parts/perfil.php';
+}
+
+else if ($action == 'booking') {
+    include './parts/booking.php';
+}
+
+else if($action == 'registerbook'){
+include './parts/registerbook.php';
+include './parts/footer.php';
+include './classes/book.php';
+include 'db.php';
+}
+else if($action=='doregisterbook'){
+		include './classes/book.php';
+		$b = new book();
+        
+        $b->titulo = $_POST['titulo'];
+        $b->autor = $_POST['autor'];
+        $b->dept = $_POST['dept'];
+        $b->ISBN = $_POST['ISBN'];
+        $b->estado = $_POST['estado'];
+        $b->precio = $_POST['precio'];
+        $b->save();
+        
+ showSuccess('You Have Successfully registered your book for sale.');
+}
+
+
+    else {    include './parts/body.php';
 }
  
 include './parts/footer.php';
-/*echo '<pre>' . print_r($_SESSION, true)  . '</pre>';
-if (isset($_SESSION['loginTime'])) {
-    echo '<pre>' . date('d-M-Y H:m:s', $_SESSION['loginTime']) . '</pre>';
-}*/
+
 function showError($msg) {
     echo '<div class="alert alert-danger" role="alert">' . $msg . '</div>';
 }

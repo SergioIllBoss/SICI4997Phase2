@@ -16,9 +16,10 @@
 			<a href="index.php" id="menu-icon"> </a><!--item para utilizar la pagina en dispositivos moviles-->
 			<ul><!--Menu de la pagina-->
 				<li><a href="index.php"> Inicio </a></li>
-				<li><a href= "booking.php"> Libros </a></li>
-				<li><a href="perfil.php"> Perfil  </a>
-          	</li>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+				<li><a href= "index.php?a=booking"> Libros </a></li>
+				<li><a href="index.php?a=perfil"> Perfil  </a></li>
+				<?php if (isset($loggedUser)){ ?><li><a href="index.php?a=registerbook"> Registar Libro</a></li>
+				<?php } ?>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 				&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 				&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
@@ -44,5 +45,4 @@ if (!isset($loggedUser)) {
 		<!-- This line makes the next line clear of content-->
 		<div class="clear"> </div>
     </main>
-	</header>
 	</header>

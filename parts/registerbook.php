@@ -1,4 +1,7 @@
-<form method="post" action="booking.php?a=doregisterbook">
+<div class="center"><main>
+
+<h1> Registrar Libros para la venta.</h1><br><br>
+<form method="post" action="index.php?a=doregisterbook">
           <div class="form-group">
             <label for="titulo">Titulo del Libro</label>
             <input type="text" class="form-control" name="titulo"  placeholder="Titulo" >          </div>            
@@ -23,4 +26,4 @@
             <input type="number" class="form-control" name="precio" placeholder="Ingrese Precio $">
 		  </div>
           <button type="submit" class="btn btn-primary">Register Book</button>
-        </form>
+        </form></main></div>
